@@ -1,24 +1,23 @@
 const React = require('react')
 
 class Show extends React.Component {
-  render () {
-    //receive data from blogs.js
-    const blogs = this.props.blogs
-    const presentDate = this.props.date
-
-    const sayHello = () => console.log('hello')
-    
+    render(){
+        const {blog} = this.props
         return(
-          <div style={{backgroundColor:'royalblue' }}>
-          <h1> Show Page!!!! </h1>
+            <div>
+                <h1>MY Blog</h1>
+                <head>
+                    <link rel="stylesheet" href="/CSS/app.css" />
+                </head>
 
-          <h3>The blog name is {blogs.name} and the color is {blogs.color}</h3>
+                <h1>{blog.title}</h1>
+                <p>{blog.body}</p>
 
-          <h4>{blogs.readyToEat? 'Its is ready to eat' : 'It is not ready to eat... Cant touch this'}</h4>
-          
-          <h6>Year:{presentDate} {sayHello()}</h6>
-          </div>
-          );
-         }
-       }
-      module.exports  = Show;
+                <h6>Liked by {blog.likes}</h6>
+                <h5>Written by: {blog.author}</h5>
+            </div>
+        )
+    }
+}
+
+module.exports = Show

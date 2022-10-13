@@ -16,22 +16,33 @@ router.get('/', async (req, res) => {
 
 
 //GET BLOG BY ID
-router.get('/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blog = await BlogModel.findById(req.params.id)
     res.render('Blogs/Show', {blog: blog})
   } catch (error) {
     console.log(error);
-    res.status(403).send('Cannot create')
+    res.status(403).send('Cannot get')
   }
 })
 
+router.get('/blog/new', (req, res) => {
+  console.log('REQ BODY', req.body);
+  console.log('----------------------------------------------');
+  res.render('/Blogs/New');
+});
+
 
 //CREATE A NEW BLOG
-router.post('/', async (req, res) => {
+router.post('/blog', async (req, res) => {
   try{
+    if (req.body.sponsored === "on") {
+      req.body.sponsored = true;
+    } else {
+      req.body.sponsored = false;
+    }
     const newBlog = await BlogModel.create(req.body)
-    res.send(newBlog)
+    res.redirect('/blog')
   } catch (error) {
       console.log(error);
       res.status(403).send('Cannot create')
@@ -43,7 +54,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedBlog = await BlogModel.findOneAndUpdate(req.params.id, req.body, {'returnDocument' : "after"})
-    res.send(updatedBlog)
+    res.redirect('/blog')
   } catch (error) {
     console.log(error);
     res.status(403).send('Cannot put')
@@ -65,10 +76,5 @@ router.delete('/:id', async (req, res) => {
 })
 
     
-
-
-
-
-
 
 module.exports = router;

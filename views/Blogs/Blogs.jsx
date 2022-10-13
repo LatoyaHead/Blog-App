@@ -1,71 +1,52 @@
 const React = require("react");
-
+const NavBar = require('../components/Navbar')
 
 class Blogs extends React.Component {
   render() {
-    const {blogs} = this.props
+    const { blogs } = this.props;
     return (
-      <div style={styles.container}>
-        <h1 style={styles.header}>New Blog</h1>
-        <a style={styles.createFruitBtn} href="/fruits/new">Create New Blog</a>
+      <div>
+        <head>
+          <link rel="stylesheet" href="/CSS/main.css" />
+        </head>
 
-        <ul style={styles.ulContainer}>
-          {blogs.map((blog, idx) => (
-            <div style={styles.item}>
-              <a href={`/blogs/${blog._id}`}>{blog.title}</a> 
-              <br />
-              <p>
-                {blog.body}
-              </p>
-              <h6>
-              {blog.author}
-              </h6>
+        <NavBar />
+        
+        <h1>Blogs</h1>
+
+        <section style={styles.container}>
+          {blogs.map((blog) => (
+            <div style={styles.wrapper} className="card">
+              <a href={`/blogs/${blog._id}`}>
+                {" "}
+                <h2>{blog.title}</h2>
+              </a>
+              <div>
+                <p>{blog.body}</p>
+              </div>
+              <h6>Written by: {blog.author}</h6>
             </div>
           ))}
-        </ul>
+        </section>
+
       </div>
     );
   }
 }
-
-module.exports = Blogs;
-
 const styles = {
   container: {
-    backgroundColor: 'royalblue',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
-  header: {
-    fontSize: '32px',
-    color: '#fff',
+  wrapper: {
+    padding: "20px",
+    margin: "10px",
+    width: "300px",
+    border: "solid",
+    borderWidth: "2px",
+    borderColor: "black",
   },
-  ulContainer: {
-    backgroundColor: '#fff',
-    padding: '15px'
-  },
-  createFruitBtn: {
-    backgroundColor: '#fff',
-    padding: '5px',
-    borderRadius: '5px',
-    textDecoration: 'none'
-  },
-  item: {
-    padding: '10px',
-    listStyleType: 'none'
-  },
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
+module.exports = Blogs;

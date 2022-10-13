@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
+const methodOverride = require('method-override')
 require('dotenv').config()
 
 const app = express()
@@ -9,6 +10,8 @@ const PORT = 3000
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'))
 
 // App settings
 app.set("view engine", "jsx");
@@ -17,11 +20,16 @@ app.engine("jsx", require("express-react-views").createEngine());
 app.use('/blog', require('./controllers/BlogRouter'))
 app.use('/user', require('./controllers/UserRouter'))
 
+
 app.get('/', (req, res) => {
     res.render('pages/HomePage')
 })
 
-
+app.get('/blog/new', (req, res) => {
+  console.log('REQ BODY', req.body);
+  console.log('----------------------------------------------');
+  res.render('blogs/New');
+});
 
 
 app.listen(PORT, () => {
