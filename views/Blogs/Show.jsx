@@ -1,4 +1,5 @@
 const React = require('react')
+const NavBar = require('../components/Navbar')  
 
 class Show extends React.Component {
     render(){

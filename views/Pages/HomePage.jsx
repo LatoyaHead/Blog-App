@@ -14,7 +14,7 @@ class HomePage extends React.Component {
         <section>
           <h1>Blog App</h1>
 
-          <img src="images/blog.png" style={styles.headerImg} />
+          <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" style={styles.headerImg} />
 
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
@@ -73,9 +73,9 @@ class HomePage extends React.Component {
 }
 
 const styles = {
-  headerImg: { width: "100%", height: "300px", objectFit: "fill" },
+  headerImg: { width: "100%", height: "150px", },
   me: {
-    width: "200px",
+    width: "200px", 
     height: "200px",
     borderRadius: "50%",
     objectFit: "fill",

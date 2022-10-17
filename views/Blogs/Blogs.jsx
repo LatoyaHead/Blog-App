@@ -3,7 +3,8 @@ const NavBar = require('../components/Navbar')
 
 class Blogs extends React.Component {
   render() {
-    const { blogs } = this.props;
+    const { blogs, loggedInUser } = this.props;
+    console.log('image', blogs);
     return (
       <div>
         <head>
@@ -23,8 +24,19 @@ class Blogs extends React.Component {
               </a>
               <div>
                 <p>{blog.body}</p>
+                <img src={blog.image} alt="" />
               </div>
               <h6>Written by: {blog.author}</h6>
+              <br />
+              {blog.author === loggedInUser ? (
+              <form style={styles.delete} action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
+                  <input type='submit' value='Delete' />
+                </form>
+                ) : null}
+                {blog.author === loggedInUser ? (
+                  <a style={styles.edit} href={`/blog/${blog._id}/edit`}><button>Edit</button></a>
+                ) : null}
+                
             </div>
           ))}
         </section>

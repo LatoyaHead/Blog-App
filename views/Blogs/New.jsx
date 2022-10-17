@@ -4,16 +4,31 @@ class New extends React.Component {
   render(){
     return(
       <div>
-        <h1>Add New Blog</h1>
+        <head>
+          <link rel="stylesheet" href="/css/app/css" />
+        </head>
+
+        <h1>Create New Blog</h1>
 
         <form action="/blog" method="POST">
-         Name: <textarea type="textarea" name="body" rows="25" cols="25" required maxLength={333}/>
+         Title: 
+         <br />
+         <input type="text" name="title" placeholder='Title of Blog' />
           <br />
-         Author: <input type="text" name="author" />
+         Body: 
+         <br />
+         <textarea type="text" name="body" placeholder="Insert text here.." rows="10" cols="80" />
           <br />
-          Title: <input type="text" name="title" />
+          {/* Author: 
           <br />
-          <input type="submit" value="Create new Blog" />
+          <input type="text" name="author" />
+          <br /> */}
+          Upload Image:
+          <br />
+          <input type="file" id="myFile" name="image" />
+          <br />
+          <input type="submit" value="Create New Blog Post!" />
+          <br />
         </form>
       </div>
     )
