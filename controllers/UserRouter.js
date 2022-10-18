@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 //render a sign up form
 router.get('/signup', (req, res) => {
-  res.render('user/signup')
+  res.render('user/Signup')
 })
 
 //POST: Create a new user
@@ -49,7 +49,7 @@ router.post("/signup", async (req, res) => {
 
 //RENDER SIGN-IN FORM
 router.get('/signin', async (req, res) => {
-  res.render('user/signin')
+  res.render('user/Signin')
 })
 
 //Sign-in a user
