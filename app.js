@@ -27,7 +27,7 @@ app.use(session({
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
-app.use('/blogs', require('./controllers/BlogRouter'))
+app.use('/blog', require('./controllers/BlogRouter'))
 app.use('/user', require('./controllers/UserRouter'))
 
 
