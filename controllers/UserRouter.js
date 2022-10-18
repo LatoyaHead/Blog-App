@@ -20,6 +20,7 @@ router.get('/signup', (req, res) => {
   res.render('user/signup')
 })
 
+//POST: Create a new user
 router.post("/signup", async (req, res) => {
   try {
     // check if user exist
@@ -82,7 +83,7 @@ router.get('/signout', (req, res) => {
   
 })
 
-//Find user by id
+//GET: user by id
 router.get('/:id', async(req, res) => {
   try {
     const user = await UserModel.findById(req.params.id)

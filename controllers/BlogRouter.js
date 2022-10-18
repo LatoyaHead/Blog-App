@@ -24,26 +24,26 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/new', (req, res) => {
+  console.log('REQ BODY', req.body);
+  console.log('----------------------------------------------');
+  res.render('Blogs/New');
+});
 
 //GET BLOG BY ID
 router.get('/:id', async (req, res) => {
   try {
     const blog = await BlogModel.findById(req.params.id)
-    res.render('Blog/Show', {blog: blog})
+    res.render('Blogs/Show', {blog: blog})
   } catch (error) {
     console.log(error);
     res.status(403).send('Cannot get')
   }
 })
 
-router.get('/new', (req, res) => {
-  console.log('REQ BODY', req.body);
-  console.log('----------------------------------------------');
-  res.render('/Blogs/New');
-});
 
 
-//CREATE A NEW BLOG
+//POST: CREATE A NEW BLOG
 router.post('/', async (req, res) => {
   console.log(req.body);
   try{
@@ -62,7 +62,6 @@ router.post('/', async (req, res) => {
   }
 })
 
-
 //PUT: UPDATE BY ID
 router.put('/:id', async (req, res) => {
   try {
@@ -75,8 +74,7 @@ router.put('/:id', async (req, res) => {
   
 })
 
-
-//DELETE 
+//DELETE: Remove by ID
 router.delete('/:id', async (req, res) => {
   try {
     const deletedBlog = await BlogModel.findByIdAndRemove(req.params.id)
