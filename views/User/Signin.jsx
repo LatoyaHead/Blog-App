@@ -14,13 +14,15 @@ class Signin extends React.Component {
 
             <label htmlFor="email">Email</label>
             <br />
-            <input type="text" name="email" required />
+            <input type="text" name="email" required style={{width:"100%"}}/>
             <br />
             <label htmlFor="password">Password</label>
             <br />
-            <input type="password" name="password" required />
+            <input type="password" name="password" required style={{width:"100%"}} />
             <br />
+            <div className="btn">
             <input type="submit" value="SIGN IN" />
+            </div>
           </fieldset>
         </form>
       </div>

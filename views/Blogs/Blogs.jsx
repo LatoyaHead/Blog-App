@@ -8,35 +8,48 @@ class Blogs extends React.Component {
     return (
       <div>
         <head>
-          <link rel="stylesheet" href="/CSS/main.css" />
+          <link rel="stylesheet" href="/CSS/app.css" />
         </head>
 
         <NavBar />
         
         <h1>Blogs</h1>
 
-        <section style={styles.container}>
+        <section className="blog-section">
           {blogs.map((blog) => (
-            <div style={styles.wrapper} className="card">
-              <a href={`/blogs/${blog._id}`}>
-                {" "}
-                <h2>{blog.title}</h2>
-              </a>
-              <div>
-                <p>{blog.body}</p>
-                <img src={blog.image} alt="" />
+            <div className="card">
+              <div className="img">
+                {
+                  blog.image ?
+                  <img src={blog.image} /> :
+                  <div style={{ height: 140, width: '100%', background: 'black', display: 'flex',
+                  justifyContent: 'center', alignItems: 'center'}}>
+                    <h1 style={{ margin: 0, color: 'white'}}>No Image Supplied</h1>
+                  </div>
+                }
               </div>
-              <h6>Written by: {blog.author}</h6>
-              <br />
-              {blog.author === loggedInUser ? (
-              <form style={styles.delete} action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
-                  <input type='submit' value='Delete' />
-                </form>
-                ) : null}
+              <div style={{ padding: 10 }}>
+                <a href={`/blog/${blog._id}`} style={{ fontSize: 18, justifyContent:'center', padding: 0}}>
+                  {" "}
+                  <h2>{blog.title}</h2>
+                </a>
+                <div>
+                    <p>{blog.body}</p>
+                </div>
+                <h6>Written by: {blog.author}</h6>
                 {blog.author === loggedInUser ? (
-                  <a style={styles.edit} href={`/blog/${blog._id}/edit`}><button>Edit</button></a>
-                ) : null}
-                
+                <form action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
+                  <div style={{display: 'flex', gap: 10}}>
+                    <div style={{ width: '50%', display: 'flex', justifyContent: 'center'}}>
+                      <input type='submit' value='Delete' style={{ width: '100%',fontSize: '1.5em', background: 'salmon', color: 'white', border:'1px solid salmon', fontFamily: "Comfortaa", textShadow: '1px 1px 1px black'}}/>
+                    </div>
+                    <div style={{ width: '50%', display: 'flex', justifyContent: 'center'}}>
+                      <a href={`/blog/${blog._id}/edit`} style={{ background: 'black', width: '100%', justifyContent: 'center', color: 'white'}}>Edit</a>
+                    </div>
+                  </div>  
+                  </form>
+                  ) : null}
+                </div>
             </div>
           ))}
         </section>
@@ -45,20 +58,6 @@ class Blogs extends React.Component {
     );
   }
 }
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  wrapper: {
-    padding: "20px",
-    margin: "10px",
-    width: "300px",
-    border: "solid",
-    borderWidth: "2px",
-    borderColor: "black",
-  },
-};
+
+
 module.exports = Blogs;

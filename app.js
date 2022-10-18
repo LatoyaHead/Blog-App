@@ -9,7 +9,7 @@ const path = require('path')
 const BlogModel = require('./models/BlogSchema')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(express.static('public'))
 app.use(morgan('dev'))
@@ -35,29 +35,6 @@ app.get('/', (req, res) => {
     res.render('pages/HomePage')
 })
 
-app.get('/blog/new', (req, res) => {
-  console.log('REQ BODY', req.body);
-  console.log('----------------------------------------------');
-  res.render('blogs/New');
-});
-
-app.post('/blog', async (req, res) => {
-  try{
-    if (req.body.sponsored === "on") {
-      req.body.sponsored = true;
-    } else {
-      req.body.sponsored = false;
-    }
-    console.log('redirect');
-    const newBlog = await BlogModel.create(req.body)
-    res.redirect('/blog')
-  } catch (error) {
-      console.log(error);
-      res.status(403).send('Cannot create')
-  }
-})
-
-
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
 
@@ -70,17 +47,6 @@ app.listen(PORT, () => {
       mongoose.connection.once("open", () => {
         console.log("connected to mongo");
       });
-})
-
-app.put('/:id', async (req, res) => {
-  try {
-    const updatedBlog = await BlogModel.findOneAndUpdate(req.params.id, req.body, {'returnDocument' : "after"})
-    res.redirect('/blog')
-  } catch (error) {
-    console.log(error);
-    res.status(403).send('Cannot put')
-  }
-  
 })
 
 

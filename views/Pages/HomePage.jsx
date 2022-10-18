@@ -12,9 +12,7 @@ class HomePage extends React.Component {
         <NavBar />
 
         <section>
-          <h1>Blog App</h1>
-
-          <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" style={styles.headerImg} />
+          <h1>Beauty Blog App</h1>
 
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
@@ -26,8 +24,8 @@ class HomePage extends React.Component {
 
         <section className="margin-section">
           <h1>Bio</h1>
-          <div style={styles.intro}>
-            <img src="https://images.unsplash.com/photo-1513001900722-370f803f498d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" style={styles.me} />
+          <div classname="intro">
+            <img src="https://images.unsplash.com/photo-1513001900722-370f803f498d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="me" />
             <div>
               <h2>Developer</h2>
               <p>
@@ -72,21 +70,5 @@ class HomePage extends React.Component {
   }
 }
 
-const styles = {
-  headerImg: { width: "100%", height: "150px", },
-  me: {
-    width: "200px", 
-    height: "200px",
-    borderRadius: "50%",
-    objectFit: "fill",
-    marginRight: "5px",
-  },
-  intro: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    width: "auto",
-  },
-};
 
 module.exports = HomePage;

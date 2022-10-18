@@ -1,6 +1,7 @@
 const express = require('express')
 const UserModel = require('../models/UserSchema')
 const bcrypt = require('bcryptjs')
+
 const router = express.Router()
 
 //GET ALL BLOGS
@@ -14,6 +15,7 @@ router.get('/', async (req, res) => {
   }
 })
 
+//render a sign up form
 router.get('/signup', (req, res) => {
   res.render('user/signup')
 })
@@ -94,7 +96,7 @@ router.get('/:id', async(req, res) => {
 
 
 //PUT update a user
-router.put('/', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const updatedUser = await UserModel.findByIdAndUpdate(req.params.id, req.body, {'returnDocument' : 'after'})
     res.send(updatedUser)
@@ -105,7 +107,7 @@ router.put('/', async(req, res) => {
 })
 
 //DELETE USER
-router.delete('/', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const deletedUser = await UserModel.findByIdAndRemove(req.params.id)
     res.send(deletedUser)

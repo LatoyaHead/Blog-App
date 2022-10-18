@@ -20,6 +20,8 @@ class Edit extends React.Component{
                      <br />        
                      body: <textarea name="body" defaultValue={BlogModel.body}  rows="20" cols="150"/>
                      <br />
+                     likes: <input type="text" name="likes" defaultValue={BlogModel.likes} />
+                     <br />
                      <input type='submit' value='Edit Post'/>
                 </form>
             </div>

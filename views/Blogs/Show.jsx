@@ -13,7 +13,7 @@ class Show extends React.Component {
 
                 <h1>{blog.title}</h1>
                 <p>{blog.body}</p>
-
+                <img src={blog.image} width="350px" />
                 <h6>Liked by {blog.likes}</h6>
                 <h5>Written by: {blog.author}</h5>
             </div>

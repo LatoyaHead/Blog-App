@@ -14,23 +14,25 @@ class Signup extends React.Component {
 
             <label htmlFor="username">Username</label>
             <br />
-            <input type="text" name="username" required />
+            <input type="text" name="username" required style={{width:"100%"}} />
             <br />
             <label htmlFor="email">Email</label>
             <br />
-            <input type="text" name="email" required />
+            <input type="text" name="email" required style={{width:"100%"}} />
             <br />
             <label htmlFor="password">Password</label>
             <br />
-            <input type="password" name="password" required />
+            <input type="password" name="password" required style={{width:"100%"}} />
             <br />
+            <div className="btn">
             <input type="submit" value="Signup" />
+            </div>
           </fieldset>
         </form>
 
-        <div>
+        <div className="signin">
           <p>
-            Already have an Account? <a href="/user/signin">SIGN IN</a>{" "}
+            Already have an Account?<a className="signin1" href="/user/signin">SIGN IN</a>{" "}
           </p>
         </div>
       </div>
