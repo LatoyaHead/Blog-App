@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 //render a sign up form
 router.get('/signup', (req, res) => {
-  res.render('user/Signup')
+  res.render('User/Signup')
 })
 
 //POST: Create a new user
