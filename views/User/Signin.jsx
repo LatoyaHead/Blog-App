@@ -1,17 +1,16 @@
 const React = require("react");
 const Navbar = require("../components/Navbar");
-
+const TextBackground = require('../components/TextBackground')
 class Signin extends React.Component {
   render() {
     return (
       <div>
         <Navbar />
-        <h1>SIGN IN</h1>
 
+      <div className="center">
+        <TextBackground style={{width:300}} title="SIGN INTO ACCOUNT">
         <form action="/user/signin" method="post">
           <fieldset>
-            <legend>Sign in to your account</legend>
-
             <label htmlFor="email">Email</label>
             <br />
             <input type="text" name="email" required style={{width:"100%"}}/>
@@ -25,6 +24,8 @@ class Signin extends React.Component {
             </div>
           </fieldset>
         </form>
+        </TextBackground>
+      </div>
       </div>
     );
   }

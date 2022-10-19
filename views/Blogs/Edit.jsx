@@ -14,13 +14,13 @@ class Edit extends React.Component{
                 <NavBar/> 
                 <h1>Edit</h1>
                 <form action={`/blog/${BlogModel._id}?_method=PUT`} method='POST'>
-                     title: <input type='text' name='title' defaultValue={BlogModel.title}/> 
-                     <br />    
-                     author: <input type='text' name='author' defaultValue={BlogModel.author}/>
+                     Title: <input type='text' name='title' defaultValue={BlogModel.title}/> 
                      <br />        
-                     body: <textarea name="body" defaultValue={BlogModel.body}  rows="20" cols="150"/>
+                     Body: <textarea name="body" defaultValue={BlogModel.body}  rows="20" cols="150"/>
                      <br />
-                     likes: <input type="text" name="likes" defaultValue={BlogModel.likes} />
+                     Upload Image:
+                     <br />
+                     <input type="url" id="myFile" name="image" defaultValue={BlogModel.image} placeholder='Insert Image URL'/>
                      <br />
                      <input type='submit' value='Edit Post'/>
                 </form>

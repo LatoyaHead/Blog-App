@@ -88,7 +88,13 @@ input[type="submit"] {
   background-color: rgb(245,245,245, 0.6);
   width: 300px;
 }
-
+.text-background {
+  background-color: rgb(245,245,245, 0.6);
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -133,7 +139,6 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .parent-input-div {
@@ -161,6 +166,23 @@ form {
 }
 .percent-100 {
   width: 100%
+}
+.title {
+  height: 140;
+  width: 100%;
+  background: black; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
 

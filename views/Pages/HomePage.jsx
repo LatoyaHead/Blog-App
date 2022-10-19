@@ -1,6 +1,6 @@
 const React = require("react");
 const NavBar = require('../components/Navbar')
-
+const TextBackground = require('../components/TextBackground')
 class HomePage extends React.Component {
   render() {
     return (
@@ -11,59 +11,38 @@ class HomePage extends React.Component {
 
         <NavBar />
 
-        <section>
-          <h1>Beauty Blog App</h1>
-
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
-            ea molestias, adipisci, nihil qui quisquam rem a assumenda tempora
-            nemo eius delectus placeat! Cum saepe doloribus eius repellendus ea
-            reprehenderit.
-          </p>
+        <section style={{paddingTop: 50}}>
+          <TextBackground title='BEAUTY BLOG APP'>
+            <p>
+            Beauty is commonly described as a feature of objects that makes these objects pleasurable to perceive. Such objects include landscapes, sunsets, humans and works of art. Beauty, together with art and taste, is the main subject of aesthetics, one of the major branches of philosophy. As a positive aesthetic value, it is contrasted with ugliness as its negative counterpart. Along with truth and goodness it is one of the transcendentals, which are often considered the three fundamental concepts of human understanding.
+            <br />
+            <br />
+            One difficulty in understanding beauty is because it has both objective and subjective aspects: it is seen as a property of things but also as depending on the emotional response of observers. Because of its subjective side, beauty is said to be "in the eye of the beholder". It has been argued that the ability on the side of the subject needed to perceive and judge beauty, sometimes referred to as the "sense of taste", can be trained and that the verdicts of experts coincide in the long run. This would suggest that the standards of validity of judgments of beauty are inter-subjective, i.e. dependent on a group of judges, rather than fully subjective or fully objective.
+            <br />
+            <br />
+            Conceptions of beauty aim to capture what is essential to all beautiful things. Classical conceptions define beauty in terms of the relation between the beautiful object as a whole and its parts: the parts should stand in the right proportion to each other and thus compose an integrated harmonious whole. Hedonist conceptions see a necessary connection between pleasure and beauty, e.g. that for an object to be beautiful is for it to cause disinterested pleasure. Other conceptions include defining beautiful objects in terms of their value, of a loving attitude towards them or of their function. Source: Wikipedia
+            </p>
+          </TextBackground>
         </section>
 
         <section className="margin-section">
-          <h1>Bio</h1>
-          <div classname="intro">
-            <img src="https://images.unsplash.com/photo-1513001900722-370f803f498d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="me" />
-            <div>
-              <h2>Developer</h2>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Necessitatibus odit qui enim tempora rerum neque, repellendus
-                debitis. Dicta modi expedita aliquam officiis neque laudantium
-                asperiores at perferendis maiores, eos iure. Lorem ipsum, dolor
-                sit amet consectetur adipisicing elit. Necessitatibus odit qui
-                enim tempora rerum neque, repellendus debitis. Dicta modi
-                expedita aliquam officiis neque laudantium asperiores at
-                perferendis maiores, eos iure. Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Necessitatibus odit qui enim
-                tempora rerum neque, repellendus debitis. Dicta modi expedita
-                aliquam officiis neque laudantium asperiores at perferendis
-                maiores, eos iure.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="margin-section">
-          <div>
-            <h1>Feature Blog</h1>
-            <div>
-              <h3>Intro to JS</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
-                nisi maiores nulla saepe, dolore ex atque assumenda obcaecati
-                consequuntur quo possimus maxime exercitationem tempore error
-                architecto. Dolorem consequuntur cumque unde! Lorem ipsum dolor,
-                sit amet consectetur adipisicing elit. Culpa nisi maiores nulla
-                saepe, dolore ex atque assumenda obcaecati consequuntur quo
-                possimus maxime exercitationem tempore error architecto. Dolorem
-                consequuntur cumque unde!
-              </p>
-              <span>Author: Bill</span>
-            </div>
-          </div>
+         
+              <TextBackground title='BEAUTY BLOG APP'>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus odit qui enim tempora rerum neque, repellendus
+                  debitis. Dicta modi expedita aliquam officiis neque laudantium
+                  asperiores at perferendis maiores, eos iure. Lorem ipsum, dolor
+                  sit amet consectetur adipisicing elit. Necessitatibus odit qui
+                  enim tempora rerum neque, repellendus debitis. Dicta modi
+                  expedita aliquam officiis neque laudantium asperiores at
+                  perferendis maiores, eos iure. Lorem ipsum, dolor sit amet
+                  consectetur adipisicing elit. Necessitatibus odit qui enim
+                  tempora rerum neque, repellendus debitis. Dicta modi expedita
+                  aliquam officiis neque laudantium asperiores at perferendis
+                  maiores, eos iure.
+                </p>
+              </TextBackground>
         </section>
       </div>
     );
