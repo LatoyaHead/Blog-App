@@ -17,7 +17,7 @@ router.use((req, res, next) => {
 router.get('/', async (req, res) => {
   try {
     const blogs = await BlogModel.find({})
-    res.render('Blogs/Blogs', {blogs: blogs, loggedInUser: req.session.username})
+    res.render('blogs/Blogs', {blogs: blogs, loggedInUser: req.session.username})
   } catch (error) {
     console.log(error);
     res.status(403).send('Cannot get')
@@ -25,8 +25,6 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  console.log('REQ BODY', req.body);
-  console.log('----------------------------------------------');
   res.render('blogs/New');
 });
 
