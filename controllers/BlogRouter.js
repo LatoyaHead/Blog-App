@@ -28,6 +28,11 @@ router.get('/new', (req, res) => {
   res.render('Blogs/New');
 });
 
+router.get('/edit/:id', async (req, res) => {
+  const blog = await BlogModel.findById(req.params.id)
+  res.render('Blogs/Edit', {BlogModel: blog});
+});
+
 //GET BLOG BY ID
 router.get('/:id', async (req, res) => {
   try {

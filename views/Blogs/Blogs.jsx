@@ -38,16 +38,16 @@ class Blogs extends React.Component {
                 </div>
                 <h6>Written by: {blog.author}</h6>
                 {blog.author === loggedInUser ? (
-                <form action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
-                  <div style={{display: 'flex', gap: 10}}>
-                    <div style={{ width: '50%', display: 'flex', justifyContent: 'center'}}>
-                      <input type='submit' value='Delete' style={{ width: '100%',fontSize: '1.5em', background: 'salmon', color: 'white', border:'1px solid salmon', fontFamily: "Comfortaa", textShadow: '1px 1px 1px black'}}/>
+                <div style={{display: 'flex', gap: 10, width: '100%'}}>
+                  <form action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
+                    <div className="parent-input-div">
+                      <input type='submit' value='Delete' className="delete-button"/>
                     </div>
-                    <div style={{ width: '50%', display: 'flex', justifyContent: 'center'}}>
-                      <a href={`/blog/${blog._id}/edit`} style={{ background: 'black', width: '100%', justifyContent: 'center', color: 'white'}}>Edit</a>
-                    </div>
-                  </div>  
                   </form>
+                  <div className="parent-input-div percent-100">
+                    <a href={`/blog/edit/${blog._id}`} className="edit-button">Edit</a>
+                  </div>
+                </div> 
                   ) : null}
                 </div>
             </div>
