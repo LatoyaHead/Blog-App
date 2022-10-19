@@ -17,7 +17,7 @@ router.use((req, res, next) => {
 router.get('/', async (req, res) => {
   try {
     const blogs = await BlogModel.find({})
-    res.render('blogs/Blogs', {blogs: blogs, loggedInUser: req.session.username})
+    res.render('Blogs/Blogs', {blogs: blogs, loggedInUser: req.session.username})
   } catch (error) {
     console.log(error);
     res.status(403).send('Cannot get')
@@ -25,14 +25,14 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  res.render('blogs/New');
+  res.render('Blogs/New');
 });
 
 //GET BLOG BY ID
 router.get('/:id', async (req, res) => {
   try {
     const blog = await BlogModel.findById(req.params.id)
-    res.render('blogs/Show', {blog: blog})
+    res.render('Blogs/Show', {blog: blog})
   } catch (error) {
     console.log(error);
     res.status(403).send('Cannot get')

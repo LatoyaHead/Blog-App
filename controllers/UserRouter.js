@@ -49,7 +49,7 @@ router.post("/signup", async (req, res) => {
 
 //RENDER SIGN-IN FORM
 router.get('/signin', async (req, res) => {
-  res.render('user/Signin')
+  res.render('User/Signin')
 })
 
 //Sign-in a user
