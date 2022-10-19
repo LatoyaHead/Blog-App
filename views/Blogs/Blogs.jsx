@@ -28,13 +28,13 @@ class Blogs extends React.Component {
                   </div>
                 }
               </div>
-              <div style={{ padding: 10 }}>
+              <div style={{ padding: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <a href={`/blog/${blog._id}`} style={{ fontSize: 18, justifyContent:'center', padding: 0}}>
                   {" "}
                   <h2>{blog.title}</h2>
                 </a>
-                <div>
-                    <p>{blog.body}</p>
+                <div >
+                    <p className="ellipsis">{blog.body}</p>
                 </div>
                 <h6>Written by: {blog.author}</h6>
                 {blog.author === loggedInUser ? (
