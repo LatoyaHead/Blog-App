@@ -13,11 +13,11 @@ class Signin extends React.Component {
           <fieldset>
             <label htmlFor="email">Email</label>
             <br />
-            <input type="text" name="email" required style={{width:"100%"}}/>
+            <input type="text" name="email" required style={{width:"100%", boxSizing: 'border-box'}}/>
             <br />
             <label htmlFor="password">Password</label>
             <br />
-            <input type="password" name="password" required style={{width:"100%"}} />
+            <input type="password" name="password" required style={{width:"100%", boxSizing: 'border-box'}} />
             <br />
             <div className="btn">
             <input type="submit" value="SIGN IN" />

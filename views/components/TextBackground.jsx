@@ -9,7 +9,7 @@ const TextBackground = ({children, title, style}) => {
 
       <div className="text-background">
         <div className='title'>{title}</div>
-        <div style={{padding:10}}>
+        <div style={{padding:20}}>
           {children}
         </div>
       </div>

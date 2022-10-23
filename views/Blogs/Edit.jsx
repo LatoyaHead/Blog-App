@@ -15,9 +15,9 @@ class Edit extends React.Component{
                 <div className="center">
                 <TextBackground style={{width:300}} title="EDIT BLOG POST">
                 <form action={`/blog/${BlogModel._id}?_method=PUT`} method='POST'>
-                     Title: <input type='text' name='title' defaultValue={BlogModel.title} style={{width:'100%'}} /> 
+                     Title: <input type='text' name='title' defaultValue={BlogModel.title} style={{width:'100%'}} required /> 
                      <br />        
-                     Body: <textarea name="body" defaultValue={BlogModel.body}  rows="10" style={{width:'100%'}} />
+                     Body: <textarea name="body" defaultValue={BlogModel.body}  rows="10" style={{width:'100%'}} required />
                      <br />
                      Upload Image:
                      <br />

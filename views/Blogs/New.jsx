@@ -16,15 +16,15 @@ class New extends React.Component {
         <form action="/blog" method="POST" >
          Title: 
          <br />
-         <input type="text" name="title" placeholder='Title of Blog' style={{width:'100%'}} />
+         <input type="text" name="title" placeholder='Title of Blog' style={{width:'100%', boxSizing: 'border-box' }} required />
           <br />
          Body: 
          <br />
-         <textarea type="text" name="body" placeholder="Insert text here.." rows="10" style={{width:'100%'}} />
+         <textarea type="text" name="body" placeholder="Insert text here.." rows="10" style={{width:'100%', boxSizing: 'border-box'}} required />
           <br />
           Upload Image:
           <br />
-          <input type="url" id="myFile" name="image" placeholder='Insert Image URL' style={{width:'100%'}}/>
+          <input type="url" id="myFile" name="image" placeholder='Insert Image URL' style={{width:'100%', boxSizing: 'border-box'}}/>
           <br />
           <input type="submit" value="Create New Blog Post!" />
           <br />
