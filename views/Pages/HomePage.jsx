@@ -25,25 +25,6 @@ class HomePage extends React.Component {
           </TextBackground>
         </section>
 
-        <section className="margin-section">
-         
-              <TextBackground title='BEAUTY BLOG APP'>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus odit qui enim tempora rerum neque, repellendus
-                  debitis. Dicta modi expedita aliquam officiis neque laudantium
-                  asperiores at perferendis maiores, eos iure. Lorem ipsum, dolor
-                  sit amet consectetur adipisicing elit. Necessitatibus odit qui
-                  enim tempora rerum neque, repellendus debitis. Dicta modi
-                  expedita aliquam officiis neque laudantium asperiores at
-                  perferendis maiores, eos iure. Lorem ipsum, dolor sit amet
-                  consectetur adipisicing elit. Necessitatibus odit qui enim
-                  tempora rerum neque, repellendus debitis. Dicta modi expedita
-                  aliquam officiis neque laudantium asperiores at perferendis
-                  maiores, eos iure.
-                </p>
-              </TextBackground>
-        </section>
       </div>
     );
   }
